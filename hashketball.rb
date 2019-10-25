@@ -128,9 +128,9 @@ end
 def num_points_scored(player, hashketball)
   player.capitalize!
   if game[:home][:players].include?(player)
-   game[:home][:players][player][:stats][:points]
+   game[:home][:players][player][:player_name][:points]
   elsif game[:away][:players].include?(player)
-   game[:away][:players][player][:stats][:points]
+   game[:away][:players][player][:player_name][:points]
   else
    "No player found."
   end
