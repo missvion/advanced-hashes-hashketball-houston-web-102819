@@ -1,5 +1,5 @@
 def game_hash
-  game = {
+  GAME = {
   :home => {
     :team_name => "Brooklyn Nets",
     :colors => ["Black", "White"],
@@ -127,10 +127,10 @@ end
 
 def num_points_scored(player)
   player.capitalize!
-  if game[:home][:players].include?(player)
-   game[:home][:players][player][:player_name][:points]
-  elsif game[:away][:players].include?(player)
-   game[:away][:players][player][:player_name][:points]
+  if GAME[:home][:players].include?(player)
+   GAME[:home][:players][player][:player_name][:points]
+  elsif GAME[:away][:players].include?(player)
+   GAME[:away][:players][player][:player_name][:points]
   else
    "No player found."
   end
