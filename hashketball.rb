@@ -125,13 +125,14 @@ def game_hash
 }
 end
 
-def num_points_scored(player_name)
-  points = 0
-  game_hash[:home][:players].each do |players|
-    if players[:player_name] == player_name
-      points += players[:points]
-    end
-  return points
+def num_points_scored(player, hashketball)
+  player.capitalize!
+  if hashketball[:home][:players].include?(player)
+   hashketball[:home][:players][player][:stats][:points]
+  elsif hashketball[:away][:players].include?(player)
+   hashketball[:away][:players][player][:stats][:points]
+  else
+   "No player found."
   end
 end
   
